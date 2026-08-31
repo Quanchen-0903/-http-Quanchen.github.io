@@ -12,37 +12,40 @@
             --text-color: #333333; 
             --light-text: #666666; 
         }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 0; color: var(--text-color); background-color: var(--bg-color); line-height: 1.6; }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; margin: 0; padding: 0; color: var(--text-color); background-color: var(--bg-color); line-height: 1.6; }
         header { background: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; padding: 1rem 5%; align-items: center; }
         .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary-color); text-decoration: none; }
         nav a { margin-left: 25px; text-decoration: none; color: var(--text-color); font-weight: 500; transition: color 0.3s; }
         nav a:hover { color: var(--secondary-color); }
-        section { padding: 5rem 5%; max-width: 1000px; margin: auto; }
-        .section-title { text-align: center; font-size: 2.2rem; margin-bottom: 3rem; color: var(--primary-color); position: relative; }
+        section { padding: 4.5rem 5%; max-width: 1000px; margin: auto; }
+        .section-title { text-align: center; font-size: 2.1rem; margin-bottom: 2.5rem; color: var(--primary-color); position: relative; }
         .section-title::after { content: ''; width: 60px; height: 4px; background: var(--secondary-color); display: block; margin: 15px auto 0; border-radius: 2px; }
-        .hero { display: flex; align-items: center; justify-content: space-between; min-height: 70vh; padding-top: 2rem; }
+        .hero { display: flex; align-items: center; justify-content: space-between; min-height: 65vh; padding-top: 2rem; }
         .hero-text { flex: 1; padding-right: 3rem; }
-        .hero-text h1 { font-size: 3rem; margin-bottom: 10px; color: var(--primary-color); }
-        .hero-text h2 { font-size: 1.5rem; color: var(--secondary-color); margin-bottom: 20px; font-weight: 400; }
-        .hero-text p { font-size: 1.1rem; color: var(--light-text); margin-bottom: 30px; }
-        .hero-img { flex: 0.5; text-align: center; }
-        .hero-img img { width: 280px; height: 280px; border-radius: 50%; object-fit: cover; border: 8px solid #ffffff; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
-        .btn { display: inline-block; padding: 12px 30px; background: var(--secondary-color); color: #ffffff; text-decoration: none; border-radius: 30px; transition: all 0.3s; font-weight: bold; }
-        .btn:hover { background: #1f6391; transform: translateY(-3px); box-shadow: 0 6px 12px rgba(41, 128, 185, 0.3); }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
-        .card { background: #ffffff; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); transition: transform 0.3s; border-top: 4px solid var(--secondary-color); }
-        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
-        .card h3 { margin-top: 0; margin-bottom: 5px; color: var(--primary-color); }
-        .card h4 { margin: 0 0 10px 0; color: var(--text-color); font-weight: 500; }
-        .date { color: var(--light-text); font-size: 0.9rem; margin-bottom: 15px; font-style: italic; }
-        ul { padding-left: 20px; color: var(--light-text); }
-        .skills-container { background: #ffffff; padding: 30px; border-radius: 12px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
-        .skill-tag { display: inline-block; background: #e6f3fa; color: var(--secondary-color); padding: 8px 18px; margin: 8px; border-radius: 20px; font-size: 0.95rem; font-weight: 500; transition: all 0.2s; }
+        .hero-text h1 { font-size: 2.8rem; margin-bottom: 8px; color: var(--primary-color); }
+        .hero-text h2 { font-size: 1.4rem; color: var(--secondary-color); margin-bottom: 15px; font-weight: 400; }
+        .info-tags { margin-bottom: 20px; }
+        .info-tags span { display: inline-block; background: #e9ecef; color: #495057; padding: 4px 12px; border-radius: 15px; font-size: 0.85rem; margin-right: 8px; margin-bottom: 8px; font-weight: 500;}
+        .hero-text p { font-size: 1.05rem; color: var(--light-text); margin-bottom: 25px; }
+        .hero-img { flex: 0.45; text-align: center; }
+        .hero-img img { width: 260px; height: 260px; border-radius: 50%; object-fit: cover; border: 6px solid #ffffff; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
+        .btn { display: inline-block; padding: 10px 26px; background: var(--secondary-color); color: #ffffff; text-decoration: none; border-radius: 30px; transition: all 0.3s; font-weight: bold; }
+        .btn:hover { background: #1f6391; transform: translateY(-2px); box-shadow: 0 4px 10px rgba(41, 128, 185, 0.3); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
+        .card { background: #ffffff; padding: 22px 25px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); transition: transform 0.3s; border-top: 4px solid var(--secondary-color); }
+        .card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.07); }
+        .card h3 { margin-top: 0; margin-bottom: 5px; color: var(--primary-color); font-size: 1.25rem;}
+        .card h4 { margin: 0 0 8px 0; color: var(--text-color); font-weight: 500; font-size: 1.05rem;}
+        .date { color: var(--light-text); font-size: 0.9rem; margin-bottom: 12px; font-style: italic; }
+        ul { padding-left: 20px; color: var(--light-text); margin-bottom: 0; }
+        li { margin-bottom: 6px; }
+        .skills-container { background: #ffffff; padding: 25px; border-radius: 10px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
+        .skill-tag { display: inline-block; background: #e6f3fa; color: var(--secondary-color); padding: 8px 16px; margin: 6px; border-radius: 20px; font-size: 0.9rem; font-weight: 500; transition: all 0.2s; }
         .skill-tag:hover { background: var(--secondary-color); color: #ffffff; }
         footer { background: var(--primary-color); color: #ffffff; text-align: center; padding: 2.5rem 0; margin-top: 3rem; }
-        footer a { color: #8ab4f8; text-decoration: none; margin: 0 10px; }
+        footer a { color: #8ab4f8; text-decoration: none; margin: 0 8px; }
         footer a:hover { text-decoration: underline; }
-        @media(max-width: 768px) { .hero { flex-direction: column-reverse; text-align: center; padding-top: 3rem; } .hero-text { padding-right: 0; margin-top: 2rem; } header { flex-direction: column; padding: 1rem; } nav { margin-top: 15px; } }
+        @media(max-width: 768px) { .hero { flex-direction: column-reverse; text-align: center; padding-top: 2rem; } .hero-text { padding-right: 0; margin-top: 1.5rem; } header { flex-direction: column; padding: 1rem; } nav { margin-top: 12px; } }
     </style>
 </head>
 <body>
@@ -51,50 +54,87 @@
         <a href="#" class="logo">陈泉 (Chen Quan)</a>
         <nav>
             <a href="#about">关于我</a>
-            <a href="#education">教育与荣誉</a>
-            <a href="#projects">科研实践</a>
+            <a href="#education">教育背景</a>
+            <a href="#honors">荣誉与奖项</a>
+            <a href="#projects">科研与实践</a>
             <a href="#skills">专业技能</a>
         </nav>
     </header>
 
+    <!-- 个人简介 -->
     <section class="hero" id="about">
         <div class="hero-text">
             <h1>你好，我是陈泉</h1>
-            <h2>测绘工程硕士研究生 | 遥感算法研发与应用</h2>
-            <p>现就读于昆明理工大学国土资源工程学院，致力于遥感算法的研发与微波数据反演。拥有扎实的测绘与遥感物理理论基础，以及基于 GEE 的海量数据工程落地经验。兼具出色的团队协作与组织管理能力，期待将前沿遥感算法转化为解决实际痛点的落地应用。</p>
-            <a href="#" class="btn">联系我 (13163393951)</a>
+            <h2>测绘工程硕士研究生 | 遥感与空间大数据</h2>
+            <div class="info-tags">
+                <span>📍 湖北武汉</span>
+                <span>🚩 中共预备党员</span>
+                <span>📷 摄影</span>
+                <span>🚴‍♂️ 骑行</span>
+            </div>
+            <p>现就读于昆明理工大学国土资源工程学院，担任 2024 级研究生测绘四班班长与团支部副书记。专注于微波遥感物理反演与空间大数据处理，熟练运用 GEE 与 ArcGIS 平台开展大规模遥感分析。具备扎实的数理功底、严谨的科研态度及良好的团队协作与组织能力。</p>
+            <a href="mailto:chenquan@stu.kust.edu.cn" class="btn">联系我 (13163393951)</a>
         </div>
         <div class="hero-img">
-            <!-- 记得将你的简历证件照命名为 profile.jpg 放在同一文件夹下 -->
             <img src="profile.jpg" alt="陈泉的照片">
         </div>
     </section>
 
+    <!-- 教育背景 -->
     <section id="education">
-        <h2 class="section-title">教育与荣誉</h2>
+        <h2 class="section-title">教育背景</h2>
         <div class="grid">
             <div class="card">
                 <h3>昆明理工大学</h3>
-                <h4>测绘工程 - 硕士研究生</h4>
+                <h4>国土资源工程学院 - 测绘工程 (专业型硕士)</h4>
                 <div class="date">2024.09 - 至今</div>
                 <ul>
-                    <li><strong>学业成绩：</strong> GPA 3.77/4.0 (平均分 85.95)</li>
-                    <li><strong>所获荣誉：</strong> 连续两年获校级学业一等奖学金 (2024, 2025)</li>
-                    <li><strong>学生工作：</strong> 班长、团支部副书记；获校级优秀研究生干部、社会实践先进个人</li>
+                    <li><strong>学业表现：</strong> GPA 3.77 / 课程总平均分 85.95</li>
+                    <li><strong>职务经历：</strong> 班长、团支部副书记，认真履行班级管理与服务职责</li>
+                    <li><strong>学术成果：</strong> 一作论文在投 IEEE TGRS (SCI Under Review)</li>
                 </ul>
             </div>
             <div class="card">
                 <h3>黑龙江工程学院</h3>
-                <h4>测绘工程 - 学士</h4>
-                <div class="date">2020.09 - 2024.09</div>
+                <h4>测绘工程学院 - 测绘工程 (学士)</h4>
+                <div class="date">2020.09 - 2024.06</div>
                 <ul>
-                    <li><strong>核心素质：</strong> 掌握测绘工程核心理论，具备扎实的数理基础与空间数据处理能力。</li>
-                    <li><strong>综合证书：</strong> 英语 CET-6 (431分) / CET-4 (443分)，全国计算机等级考试三级 (NCRE)。</li>
+                    <li><strong>专业培养：</strong> 系统学习测量学、误差理论、GIS原理及遥感基础理论</li>
+                    <li><strong>资格认证：</strong> 全国大学英语六级 (CET-6)、英语四级 (CET-4)</li>
+                    <li><strong>技术认证：</strong> 全国计算机等级考试三级 (NCRE-3)</li>
                 </ul>
             </div>
         </div>
     </section>
 
+    <!-- 荣誉与奖惩情况 -->
+    <section id="honors">
+        <h2 class="section-title">奖项与荣誉</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>🏆 学业与骨干荣誉</h3>
+                <div class="date">校级表彰</div>
+                <ul>
+                    <li><strong>2025.12：</strong> 校级研究生学业奖学金 <strong>一等奖</strong></li>
+                    <li><strong>2024.11：</strong> 校级研究生学业奖学金 <strong>一等奖</strong></li>
+                    <li><strong>2026.05：</strong> 校级 <strong>优秀研究生干部</strong> 荣誉称号</li>
+                    <li><strong>2025.05：</strong> 校级研究生 <strong>社会实践先进个人</strong> 称号</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>🎨 校园文化与综合竞赛</h3>
+                <div class="date">院级文体与实践</div>
+                <ul>
+                    <li><strong>2025.05 / 2025.12 / 2026.04：</strong> 樱花杯摄影比赛 <strong>三等奖</strong> (三届连获)</li>
+                    <li><strong>2024.12 / 2025.12：</strong> 三行情书大赛 <strong>最佳人气奖 / 三等奖</strong></li>
+                    <li><strong>2025.06：</strong> “袋动国土”设计大赛 <strong>三等奖</strong></li>
+                    <li><strong>2025.05：</strong> 第一届拼贴画比赛 <strong>三等奖</strong></li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 科研与实践经历 -->
     <section id="projects">
         <h2 class="section-title">科研与实践经历</h2>
         <div class="grid">
@@ -108,35 +148,39 @@
                     <li><strong>应用成果：</strong> 成功实现 Sentinel-1 与 SMAP 升降轨全球级数据的高效自动化反演。</li>
                 </ul>
             </div>
+            <!-- 竞赛经历部分：严格保持原样未变动 -->
             <div class="card">
-                <h3>2025 ERSI杯中国大学生GIS软件开发竞赛</h3>
+                <h3>2025 易智瑞杯中国大学生 GIS 软件开发竞赛</h3>
                 <h4>遥感应用组 - 优胜奖</h4>
-                <div class="date">2025.11 (中国测绘学会颁发)</div>
+                <div class="date">2025.11 (中国测绘学会主办)</div>
                 <ul>
-                    <li><strong>竞赛项目：</strong> 《北极海冰面积时空变化特性与影响因素分析》</li>
-                    <li><strong>实践贡献：</strong> 参与遥感数据的处理与分析，结合 GIS 空间分析工具，深度挖掘海冰变化特征，展现了良好的团队协作与技术攻关能力。</li>
+                    <li><strong>参赛作品：</strong> D573《北极海冰面积时空变化特性与影响因素分析》</li>
+                    <li><strong>个人职责：</strong> 参与遥感数据的获取、预处理与分析，结合 GIS 空间分析工具，深度挖掘海冰变化特征，展现了良好的团队协作与技术攻关能力。</li>
                 </ul>
             </div>
         </div>
     </section>
 
+    <!-- 专业技能 -->
     <section id="skills">
-        <h2 class="section-title">专业技能</h2>
+        <h2 class="section-title">专业技能与证书</h2>
         <div class="skills-container">
             <span class="skill-tag">Google Earth Engine (GEE)</span>
-            <span class="skill-tag">JavaScript / Python</span>
+            <span class="skill-tag">ArcGIS 空间分析</span>
+            <span class="skill-tag">大规模遥感数据处理</span>
             <span class="skill-tag">微波遥感物理模型</span>
-            <span class="skill-tag">GIS 空间分析</span>
-            <span class="skill-tag">海量数据处理</span>
-            <span class="skill-tag">科研论文写作</span>
-            <span class="skill-tag">团队协作与管理</span>
+            <span class="skill-tag">全国计算机三级 (NCRE-3)</span>
+            <span class="skill-tag">大学英语六级 (CET-6 431分)</span>
+            <span class="skill-tag">大学英语四级 (CET-4 443分)</span>
+            <span class="skill-tag">组织管理与团队协作</span>
         </div>
     </section>
 
+    <!-- 联系方式 -->
     <footer>
         <h2>联系我</h2>
         <p>Email: <a href="mailto:chenquan@stu.kust.edu.cn">chenquan@stu.kust.edu.cn</a> | Phone: 131-6339-3951</p>
-        <p style="font-size: 0.8rem; margin-top: 20px; color: #aaa;">
+        <p style="font-size: 0.8rem; margin-top: 15px; color: #aaa;">
             © 2026 陈泉 (Chen Quan). All rights reserved. 
         </p>
     </footer>
