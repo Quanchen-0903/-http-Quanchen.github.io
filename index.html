@@ -1,4 +1,387 @@
-<p>Hello 大家好</p>
-<p>我是陈泉，这是我的个人网站。 </p>
-<p>很高兴你来到这里, 你可以在以下的网站找到我</p>
-</ul>
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- 网页标签标题 -->
+    <title>你的名字 - 个人主页 | 求职中</title>
+    <style>
+        /* CSS 样式部分 */
+        :root {
+            --primary-color: #2c3e50; /* 沉稳的深蓝灰，适合主标题 */
+            --secondary-color: #0077b5; /* 职场蓝（类似LinkedIn蓝），用于强调和按钮 */
+            --bg-color: #f8f9fa; /* 护眼的极浅灰背景 */
+            --text-color: #333333; /* 正文颜色 */
+            --light-text: #666666; /* 次要文字颜色 */
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            line-height: 1.6;
+        }
+
+        /* 顶部导航栏 */
+        header {
+            background: #ffffff;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            display: flex;
+            justify-content: space-between;
+            padding: 1rem 5%;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--primary-color);
+            text-decoration: none;
+        }
+
+        nav a {
+            margin-left: 25px;
+            text-decoration: none;
+            color: var(--text-color);
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav a:hover {
+            color: var(--secondary-color);
+        }
+
+        /* 通用区块设置 */
+        section {
+            padding: 5rem 5%;
+            max-width: 1000px;
+            margin: auto;
+        }
+
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            margin-bottom: 3rem;
+            color: var(--primary-color);
+            position: relative;
+        }
+
+        /* 标题下方的小蓝条 */
+        .section-title::after {
+            content: '';
+            width: 60px;
+            height: 4px;
+            background: var(--secondary-color);
+            display: block;
+            margin: 15px auto 0;
+            border-radius: 2px;
+        }
+
+        /* 首屏个人简介区 */
+        .hero {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            min-height: 70vh;
+            padding-top: 2rem;
+        }
+
+        .hero-text {
+            flex: 1;
+            padding-right: 3rem;
+        }
+
+        .hero-text h1 {
+            font-size: 3rem;
+            margin-bottom: 10px;
+            color: var(--primary-color);
+        }
+
+        .hero-text h2 {
+            font-size: 1.5rem;
+            color: var(--secondary-color);
+            margin-bottom: 20px;
+            font-weight: 400;
+        }
+
+        .hero-text p {
+            font-size: 1.1rem;
+            color: var(--light-text);
+            margin-bottom: 30px;
+        }
+
+        /* 头像设置 */
+        .hero-img {
+            flex: 0.5;
+            text-align: center;
+        }
+
+        .hero-img img {
+            width: 280px;
+            height: 280px;
+            border-radius: 50%;
+            object-fit: cover;
+            border: 8px solid #ffffff;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+        }
+
+        /* 按钮样式 */
+        .btn {
+            display: inline-block;
+            padding: 12px 30px;
+            background: var(--secondary-color);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 30px;
+            transition: all 0.3s;
+            font-weight: bold;
+            box-shadow: 0 4px 6px rgba(0, 119, 181, 0.2);
+        }
+
+        .btn:hover {
+            background: #005a87;
+            transform: translateY(-3px);
+            box-shadow: 0 6px 12px rgba(0, 119, 181, 0.3);
+            color: white;
+        }
+
+        /* 网格卡片（用于教育背景和项目经验） */
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background: #ffffff;
+            padding: 25px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            transition: transform 0.3s, box-shadow 0.3s;
+            border-top: 4px solid var(--secondary-color);
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
+        }
+
+        .card h3 {
+            margin-top: 0;
+            margin-bottom: 5px;
+            color: var(--primary-color);
+        }
+
+        .card h4 {
+            margin: 0 0 10px 0;
+            color: var(--text-color);
+            font-weight: 500;
+        }
+
+        .date {
+            color: var(--light-text);
+            font-size: 0.9rem;
+            margin-bottom: 15px;
+            font-style: italic;
+        }
+
+        ul {
+            padding-left: 20px;
+            color: var(--light-text);
+        }
+
+        /* 技能标签 */
+        .skills-container {
+            background: #ffffff;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            text-align: center;
+        }
+
+        .skill-tag {
+            display: inline-block;
+            background: #e6f3fa;
+            color: var(--secondary-color);
+            padding: 8px 18px;
+            margin: 8px;
+            border-radius: 20px;
+            font-size: 0.95rem;
+            font-weight: 500;
+            transition: all 0.2s;
+        }
+
+        .skill-tag:hover {
+            background: var(--secondary-color);
+            color: #ffffff;
+        }
+
+        /* 页脚 */
+        footer {
+            background: var(--primary-color);
+            color: #ffffff;
+            text-align: center;
+            padding: 2.5rem 0;
+            margin-top: 3rem;
+        }
+
+        footer a {
+            color: #8ab4f8;
+            text-decoration: none;
+            margin: 0 10px;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        /* 移动端适配 */
+        @media(max-width: 768px) {
+            .hero {
+                flex-direction: column-reverse;
+                text-align: center;
+                padding-top: 3rem;
+            }
+            .hero-text {
+                padding-right: 0;
+                margin-top: 2rem;
+            }
+            header {
+                flex-direction: column;
+                padding: 1rem;
+            }
+            nav {
+                margin-top: 15px;
+            }
+            nav a {
+                margin: 0 10px;
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <!-- 导航栏 -->
+    <header>
+        <a href="#" class="logo">[你的名字]</a>
+        <nav>
+            <a href="#about">关于我</a>
+            <a href="#education">教育背景</a>
+            <a href="#projects">项目经历</a>
+            <a href="#skills">专业技能</a>
+        </nav>
+    </header>
+
+    <!-- 首屏简介 -->
+    <section class="hero" id="about">
+        <div class="hero-text">
+            <h1>你好，我是 [你的名字]</h1>
+            <h2>[目标职位，例如：数据分析师 / 前端开发工程师 / 算法工程师]</h2>
+            <p>[一句话简介：例如，某某大学硕士研究生，研究方向为机器学习与自然语言处理。拥有扎实的编程功底和良好的数据敏感度。热爱技术，致力于用代码解决实际问题。]</p>
+            <!-- 在 href 里放你的简历 PDF 文件链接，例如 ./resume.pdf -->
+            <a href="[你的简历文件链接.pdf]" class="btn" target="_blank">下载我的简历 (PDF)</a>
+        </div>
+        <div class="hero-img">
+            <!-- 替换成你自己的照片，建议用干净背景的职业照，放到项目目录中 -->
+            <img src="https://via.placeholder.com/280x280.png?text=Profile+Photo" alt="个人照片">
+        </div>
+    </section>
+
+    <!-- 教育背景 -->
+    <section id="education">
+        <h2 class="section-title">教育背景</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>[硕士所在大学名称]</h3>
+                <h4>[你的专业名称] - 硕士研究生</h4>
+                <div class="date">202X年9月 - 202X年6月</div>
+                <ul>
+                    <li><strong>主修课程：</strong> [列举2-3门与求职岗位强相关的核心课程]</li>
+                    <li><strong>研究方向：</strong> [你的研究方向]</li>
+                    <li><strong>荣誉奖项：</strong> [例如：国家奖学金 / 一等学业奖学金]</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>[本科所在大学名称]</h3>
+                <h4>[你的专业名称] - 学士</h4>
+                <div class="date">202X年9月 - 202X年6月</div>
+                <ul>
+                    <li><strong>主修课程：</strong> [列举2-3门核心课程]</li>
+                    <li><strong>GPA：</strong> [如果有优势可以写，例如 3.8/4.0，前5%]</li>
+                    <li><strong>荣誉奖项：</strong> [优秀毕业生等]</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 项目/实习经历 (求职最重要部分) -->
+    <section id="projects">
+        <h2 class="section-title">项目与实习经历</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>[实习公司或重点项目名称]</h3>
+                <h4>[你的角色，例如：算法实习生 / 项目核心开发者]</h4>
+                <div class="date">202X年X月 - 202X年X月</div>
+                <ul>
+                    <li><strong>工作内容：</strong> 使用 [某项技术/工具] 负责 [具体做了什么任务]，解决了 [什么痛点]。</li>
+                    <li><strong>业务成果：</strong> [用数据说话，例如：将模型准确率提升了15%，或者缩短了XX%的响应时间]。</li>
+                    <li><strong>技术栈：</strong> Python, TensorFlow, MySQL</li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>[研究生课题或另一个重要项目]</h3>
+                <h4>[项目负责人]</h4>
+                <div class="date">202X年X月 - 202X年X月</div>
+                <ul>
+                    <li><strong>研究背景：</strong> 针对 [行业现状或技术难点] 提出了一种创新的解决方案。</li>
+                    <li><strong>实施过程：</strong> 设计并实现了 [什么系统/算法]，独立完成 [哪部分的开发]。</li>
+                    <li><strong>学术成果：</strong> [例如：发表了一篇SCI论文，或申请了一项国家专利]。</li>
+                </ul>
+            </div>
+        </div>
+    </section>
+
+    <!-- 专业技能 -->
+    <section id="skills">
+        <h2 class="section-title">专业技能</h2>
+        <div class="skills-container">
+            <!-- 根据你求职的方向自由增删这些标签 -->
+            <span class="skill-tag">Python</span>
+            <span class="skill-tag">Java</span>
+            <span class="skill-tag">C++</span>
+            <span class="skill-tag">SQL</span>
+            <span class="skill-tag">机器学习</span>
+            <span class="skill-tag">数据分析</span>
+            <span class="skill-tag">Pytorch</span>
+            <span class="skill-tag">Linux</span>
+            <span class="skill-tag">Git</span>
+            <span class="skill-tag">英语 CET-6</span>
+        </div>
+    </section>
+
+    <!-- 页脚/联系方式 -->
+    <footer>
+        <h2>联系我</h2>
+        <p>期待与您沟通！请通过以下方式联系我：</p>
+        <p>
+            <!-- 替换成你的真实联系方式 -->
+            Email: <a href="mailto:your.email@example.com">your.email@example.com</a> |
+            Phone: 138-XXXX-XXXX
+        </p>
+        <p>
+            <a href="[你的GitHub主页链接]" target="_blank">GitHub</a> |
+            <a href="[你的LinkedIn链接或博客链接]" target="_blank">LinkedIn</a>
+        </p>
+        <p style="font-size: 0.8rem; margin-top: 20px; color: #aaa;">
+            © 2026 [你的名字]. All rights reserved. 
+        </p>
+    </footer>
+
+</body>
+</html>
