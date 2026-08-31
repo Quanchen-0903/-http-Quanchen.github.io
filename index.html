@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>陈泉 (Chen Quan) - 个人主页</title>
+    <title>陈泉 (Chen Quan) - 个人简历</title>
     <style>
         :root {
             --primary-color: #2c3e50; 
@@ -26,7 +26,7 @@
         .hero-text h2 { font-size: 1.4rem; color: var(--secondary-color); margin-bottom: 15px; font-weight: 400; }
         .info-tags { margin-bottom: 20px; }
         .info-tags span { display: inline-block; background: #e9ecef; color: #495057; padding: 4px 12px; border-radius: 15px; font-size: 0.85rem; margin-right: 8px; margin-bottom: 8px; font-weight: 500;}
-        .hero-text p { font-size: 1.05rem; color: var(--light-text); margin-bottom: 25px; }
+        .hero-text p { font-size: 1.05rem; color: var(--light-text); margin-bottom: 25px; text-align: justify; }
         .hero-img { flex: 0.45; text-align: center; }
         .hero-img img { width: 260px; height: 260px; border-radius: 50%; object-fit: cover; border: 6px solid #ffffff; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
         .btn { display: inline-block; padding: 10px 26px; background: var(--secondary-color); color: #ffffff; text-decoration: none; border-radius: 30px; transition: all 0.3s; font-weight: bold; }
@@ -53,30 +53,32 @@
     <header>
         <a href="#" class="logo">陈泉 (Chen Quan)</a>
         <nav>
-            <a href="#about">关于我</a>
+            <a href="#about">个人陈述</a>
             <a href="#education">教育背景</a>
-            <a href="#honors">荣誉与奖项</a>
-            <a href="#projects">科研与实践</a>
-            <a href="#skills">专业技能</a>
+            <a href="#skills">技能与证书</a>
+            <a href="#competitions">竞赛经历</a>
+            <a href="#honors">奖惩情况</a>
         </nav>
     </header>
 
-    <!-- 个人简介 -->
+    <!-- 个人陈述 (融合在Hero区) -->
     <section class="hero" id="about">
         <div class="hero-text">
             <h1>你好，我是陈泉</h1>
-            <h2>测绘工程硕士研究生 | 遥感与空间大数据</h2>
+            <h2>测绘工程 | 硕士研究生</h2>
             <div class="info-tags">
                 <span>📍 湖北武汉</span>
                 <span>🚩 中共预备党员</span>
                 <span>📷 摄影</span>
                 <span>🚴‍♂️ 骑行</span>
             </div>
-            <p>现就读于昆明理工大学国土资源工程学院，担任 2024 级研究生测绘四班班长与团支部副书记。专注于微波遥感物理反演与空间大数据处理，熟练运用 GEE 与 ArcGIS 平台开展大规模遥感分析。具备扎实的数理功底、严谨的科研态度及良好的团队协作与组织能力。</p>
+            <p>系昆明理工大学测绘工程专业在读硕士研究生。在校期间担任班长与团支部副书记，工作勤恳负责。学业成绩优异（GPA 3.77，平均分 85.95），连续两年荣获一等学业奖学金，并取得英语四六级及计算机三级证书。积极参与各类校园竞赛与实践活动，具有积极向上的精神、吃苦耐劳的人生态度以及良好的团队协作能力。</p>
+            <p style="font-size: 0.95rem; color: var(--secondary-color); font-style: italic;">"如果我能有幸得到这个宝贵的工作机会，我一定会努力工作，恪尽职守，在岗位上发光发热！"</p>
             <a href="mailto:chenquan@stu.kust.edu.cn" class="btn">联系我 (13163393951)</a>
         </div>
         <div class="hero-img">
-            <img src="profile.jpg" alt="陈泉的照片">
+            <!-- 个人照片 -->
+            <img src="profile.jpg" alt="陈泉的个人照片">
         </div>
     </section>
 
@@ -89,9 +91,9 @@
                 <h4>国土资源工程学院 - 测绘工程 (专业型硕士)</h4>
                 <div class="date">2024.09 - 至今</div>
                 <ul>
-                    <li><strong>学业表现：</strong> GPA 3.77 / 课程总平均分 85.95</li>
-                    <li><strong>职务经历：</strong> 班长、团支部副书记，认真履行班级管理与服务职责</li>
-                    <li><strong>学术成果：</strong> 一作论文在投 IEEE TGRS (SCI Under Review)</li>
+                    <li><strong>学业表现：</strong> GPA 3.77 / 课程总平均分 85.95 
+                        <a href="transcript.pdf" target="_blank" style="color: #2980b9; text-decoration: none;">[📊 查看成绩单]</a>
+                    </li>
                 </ul>
             </div>
             <div class="card">
@@ -99,80 +101,94 @@
                 <h4>测绘工程学院 - 测绘工程 (学士)</h4>
                 <div class="date">2020.09 - 2024.06</div>
                 <ul>
-                    <li><strong>专业培养：</strong> 系统学习测量学、误差理论、GIS原理及遥感基础理论</li>
-                    <li><strong>资格认证：</strong> 全国大学英语六级 (CET-6)、英语四级 (CET-4)</li>
-                    <li><strong>技术认证：</strong> 全国计算机等级考试三级 (NCRE-3)</li>
+                    <li><strong>主修专业：</strong> 测绘工程</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- 荣誉与奖惩情况 -->
-    <section id="honors">
-        <h2 class="section-title">奖项与荣誉</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>🏆 学业与骨干荣誉</h3>
-                <div class="date">校级表彰</div>
-                <ul>
-                    <li><strong>2025.12：</strong> 校级研究生学业奖学金 <strong>一等奖</strong></li>
-                    <li><strong>2024.11：</strong> 校级研究生学业奖学金 <strong>一等奖</strong></li>
-                    <li><strong>2026.05：</strong> 校级 <strong>优秀研究生干部</strong> 荣誉称号</li>
-                    <li><strong>2025.05：</strong> 校级研究生 <strong>社会实践先进个人</strong> 称号</li>
-                </ul>
-            </div>
-            <div class="card">
-                <h3>🎨 校园文化与综合竞赛</h3>
-                <div class="date">院级文体与实践</div>
-                <ul>
-                    <li><strong>2025.05 / 2025.12 / 2026.04：</strong> 樱花杯摄影比赛 <strong>三等奖</strong> (三届连获)</li>
-                    <li><strong>2024.12 / 2025.12：</strong> 三行情书大赛 <strong>最佳人气奖 / 三等奖</strong></li>
-                    <li><strong>2025.06：</strong> “袋动国土”设计大赛 <strong>三等奖</strong></li>
-                    <li><strong>2025.05：</strong> 第一届拼贴画比赛 <strong>三等奖</strong></li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- 科研与实践经历 -->
-    <section id="projects">
-        <h2 class="section-title">科研与实践经历</h2>
-        <div class="grid">
-            <div class="card">
-                <h3>全球主被动微波协同土壤水分反演系统</h3>
-                <h4>核心算法设计与研发</h4>
-                <div class="date">学术论文 (Under Review in IEEE TGRS)</div>
-                <ul>
-                    <li><strong>算法创新：</strong> 耦合 Mironov 介电与辐射传输模型，独创像元级自适应权重调节与 VWC 阈值回退策略，突破高植被区反演瓶颈。</li>
-                    <li><strong>数据工程：</strong> 基于 GEE 平台，利用 <code>qualityMosaic</code> 实现网格搜索代价函数的无损降维，攻克局部入射角 (LIA) 独立沙盒地形校正。</li>
-                    <li><strong>应用成果：</strong> 成功实现 Sentinel-1 与 SMAP 升降轨全球级数据的高效自动化反演。</li>
-                </ul>
-            </div>
-            <!-- 竞赛经历部分：严格保持原样未变动 -->
-            <div class="card">
-                <h3>2025 易智瑞杯中国大学生 GIS 软件开发竞赛</h3>
-                <h4>遥感应用组 - 优胜奖</h4>
-                <div class="date">2025.11 (中国测绘学会主办)</div>
-                <ul>
-                    <li><strong>参赛作品：</strong> D573《北极海冰面积时空变化特性与影响因素分析》</li>
-                    <li><strong>个人职责：</strong> 参与遥感数据的获取、预处理与分析，结合 GIS 空间分析工具，深度挖掘海冰变化特征，展现了良好的团队协作与技术攻关能力。</li>
-                </ul>
-            </div>
-        </div>
-    </section>
-
-    <!-- 专业技能 -->
+    <!-- 技能与证书 -->
     <section id="skills">
-        <h2 class="section-title">专业技能与证书</h2>
+        <h2 class="section-title">技能与证书</h2>
         <div class="skills-container">
-            <span class="skill-tag">Google Earth Engine (GEE)</span>
-            <span class="skill-tag">ArcGIS 空间分析</span>
-            <span class="skill-tag">大规模遥感数据处理</span>
-            <span class="skill-tag">微波遥感物理模型</span>
-            <span class="skill-tag">全国计算机三级 (NCRE-3)</span>
-            <span class="skill-tag">大学英语六级 (CET-6 431分)</span>
-            <span class="skill-tag">大学英语四级 (CET-4 443分)</span>
-            <span class="skill-tag">组织管理与团队协作</span>
+            <h4 style="margin-bottom: 15px; color: var(--primary-color);">外语水平</h4>
+            <a href="cet6.pdf" target="_blank" style="text-decoration: none;">
+                <span class="skill-tag" style="cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">全国大学英语六级 CET-6 (431分) 🔗</span>
+            </a>
+            <a href="cet4.pdf" target="_blank" style="text-decoration: none;">
+                <span class="skill-tag" style="cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">全国大学英语四级 CET-4 (443分) 🔗</span>
+            </a>
+            
+            <h4 style="margin: 20px 0 15px 0; color: var(--primary-color);">计算机能力</h4>
+            <a href="ncre3.pdf" target="_blank" style="text-decoration: none;">
+                <span class="skill-tag" style="cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">全国计算机等级考试三级 (NCRE-3) 🔗</span>
+            </a>
+            
+            <h4 style="margin: 20px 0 15px 0; color: var(--primary-color);">工具与平台</h4>
+            <span class="skill-tag">GEE (Google Earth Engine)</span>
+            <span class="skill-tag">ArcGIS 空间数据分析</span>
+        </div>
+    </section>
+
+    <!-- 竞赛经历 -->
+    <section id="competitions">
+        <h2 class="section-title">竞赛经历</h2>
+        <div class="card" style="max-width: 800px; margin: auto;">
+            <h3>2025 易智瑞杯中国大学生 GIS 软件开发竞赛</h3>
+            <h4>遥感应用组</h4>
+            <div class="date">2025.11 (中国测绘学会主办)</div>
+            <ul>
+                <li><strong>参赛作品：</strong> D573《北极海冰面积时空变化特性与影响因素分析》</li>
+                <li><strong>所获奖项：</strong> <strong>优胜奖</strong> 
+                    <a href="gis_award.jpg" target="_blank" style="color: #2980b9; text-decoration: none; font-weight: bold;">[🏆 查看获奖证书]</a>
+                </li>
+                <li><strong>个人职责：</strong> 参与遥感数据的获取、预处理与分析，结合 GIS 空间分析工具，深度挖掘海冰变化特征，展现了良好的团队协作与技术攻关能力。</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- 奖惩情况 -->
+    <section id="honors">
+        <h2 class="section-title">奖惩情况</h2>
+        <div class="grid">
+            <div class="card">
+                <h3>🏆 学业与骨干类表彰</h3>
+                <div class="date">校级荣誉</div>
+                <ul>
+                    <li><strong>2026.05：</strong> 荣获校级优秀研究生干部称号
+                        <a href="excellent_cadre_2026.jpg" target="_blank" style="color: #2980b9; text-decoration: none;">[📜 证书]</a>
+                    </li>
+                    <li><strong>2025.12：</strong> 荣获校级研究生学业奖学金 <strong>一等奖学金</strong>
+                        <a href="scholarship_2025.jpg" target="_blank" style="color: #2980b9; text-decoration: none;">[📜 证书]</a>
+                    </li>
+                    <li><strong>2025.05：</strong> 荣获校级研究生社会实践先进个人称号
+                        <a href="social_practice_2025.jpg" target="_blank" style="color: #2980b9; text-decoration: none;">[📜 证书]</a>
+                    </li>
+                    <li><strong>2024.11：</strong> 荣获校级研究生学业奖学金 <strong>一等奖学金</strong>
+                        <a href="scholarship_2024.jpg" target="_blank" style="color: #2980b9; text-decoration: none;">[📜 证书]</a>
+                    </li>
+                </ul>
+            </div>
+            <div class="card">
+                <h3>🎨 综合实践竞赛</h3>
+                <div class="date">国资院级荣誉</div>
+                <ul>
+                    <li><strong>2025.05 / 2026.04 / 2025.12：</strong> 荣获国资院第五届、第六届樱花杯摄影比赛 <strong>三等奖</strong>
+                        <a href="photography_award.jpg" target="_blank" style="color: #2980b9; text-decoration: none;">[🖼️ 证书1]</a>
+                        <a href="photography_award2.jpg" target="_blank" style="color: #2980b9; text-decoration: none;">[🖼️ 证书2]</a>
+                    </li>
+                    <li><strong>2024.12 / 2025.12：</strong> 荣获国资院第四届三行情书大赛最佳人气奖、第五届 <strong>三等奖</strong>
+                        <a href="award_poem2.jpg" target="_blank" style="color: #2980b9; text-decoration: none;">[🖼️ 证书1]</a>
+                        <a href="award_poem.jpg" target="_blank" style="color: #2980b9; text-decoration: none;">[🖼️ 证书2]</a>
+                    </li>
+                    <li><strong>2025.06：</strong> 荣获国资院袋动国土设计大赛 <strong>三等奖</strong>
+                        <a href="award_design2.jpg" target="_blank" style="color: #2980b9; text-decoration: none;">[🖼️ 证书]</a>
+                    </li>
+                    <li><strong>2025.05：</strong> 荣获国资院第一届拼贴画比赛 <strong>三等奖</strong>
+                        <a href="award_design.jpg" target="_blank" style="color: #2980b9; text-decoration: none;">[🖼️ 证书]</a>
+                    </li>
+                </ul>
+            </div>
         </div>
     </section>
 
