@@ -3,383 +3,141 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <!-- 网页标签标题 -->
-    <title>你的名字 - 个人主页 | 求职中</title>
+    <title>陈泉 (Chen Quan) - 个人主页</title>
     <style>
-        /* CSS 样式部分 */
         :root {
-            --primary-color: #2c3e50; /* 沉稳的深蓝灰，适合主标题 */
-            --secondary-color: #0077b5; /* 职场蓝（类似LinkedIn蓝），用于强调和按钮 */
-            --bg-color: #f8f9fa; /* 护眼的极浅灰背景 */
-            --text-color: #333333; /* 正文颜色 */
-            --light-text: #666666; /* 次要文字颜色 */
+            --primary-color: #2c3e50; 
+            --secondary-color: #2980b9; 
+            --bg-color: #f8f9fa; 
+            --text-color: #333333; 
+            --light-text: #666666; 
         }
-
-        body {
-            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-            margin: 0;
-            padding: 0;
-            color: var(--text-color);
-            background-color: var(--bg-color);
-            line-height: 1.6;
-        }
-
-        /* 顶部导航栏 */
-        header {
-            background: #ffffff;
-            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
-            position: sticky;
-            top: 0;
-            z-index: 100;
-            display: flex;
-            justify-content: space-between;
-            padding: 1rem 5%;
-            align-items: center;
-        }
-
-        .logo {
-            font-size: 1.5rem;
-            font-weight: bold;
-            color: var(--primary-color);
-            text-decoration: none;
-        }
-
-        nav a {
-            margin-left: 25px;
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 500;
-            transition: color 0.3s;
-        }
-
-        nav a:hover {
-            color: var(--secondary-color);
-        }
-
-        /* 通用区块设置 */
-        section {
-            padding: 5rem 5%;
-            max-width: 1000px;
-            margin: auto;
-        }
-
-        .section-title {
-            text-align: center;
-            font-size: 2.2rem;
-            margin-bottom: 3rem;
-            color: var(--primary-color);
-            position: relative;
-        }
-
-        /* 标题下方的小蓝条 */
-        .section-title::after {
-            content: '';
-            width: 60px;
-            height: 4px;
-            background: var(--secondary-color);
-            display: block;
-            margin: 15px auto 0;
-            border-radius: 2px;
-        }
-
-        /* 首屏个人简介区 */
-        .hero {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            min-height: 70vh;
-            padding-top: 2rem;
-        }
-
-        .hero-text {
-            flex: 1;
-            padding-right: 3rem;
-        }
-
-        .hero-text h1 {
-            font-size: 3rem;
-            margin-bottom: 10px;
-            color: var(--primary-color);
-        }
-
-        .hero-text h2 {
-            font-size: 1.5rem;
-            color: var(--secondary-color);
-            margin-bottom: 20px;
-            font-weight: 400;
-        }
-
-        .hero-text p {
-            font-size: 1.1rem;
-            color: var(--light-text);
-            margin-bottom: 30px;
-        }
-
-        /* 头像设置 */
-        .hero-img {
-            flex: 0.5;
-            text-align: center;
-        }
-
-        .hero-img img {
-            width: 280px;
-            height: 280px;
-            border-radius: 50%;
-            object-fit: cover;
-            border: 8px solid #ffffff;
-            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
-        }
-
-        /* 按钮样式 */
-        .btn {
-            display: inline-block;
-            padding: 12px 30px;
-            background: var(--secondary-color);
-            color: #ffffff;
-            text-decoration: none;
-            border-radius: 30px;
-            transition: all 0.3s;
-            font-weight: bold;
-            box-shadow: 0 4px 6px rgba(0, 119, 181, 0.2);
-        }
-
-        .btn:hover {
-            background: #005a87;
-            transform: translateY(-3px);
-            box-shadow: 0 6px 12px rgba(0, 119, 181, 0.3);
-            color: white;
-        }
-
-        /* 网格卡片（用于教育背景和项目经验） */
-        .grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 25px;
-        }
-
-        .card {
-            background: #ffffff;
-            padding: 25px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-            transition: transform 0.3s, box-shadow 0.3s;
-            border-top: 4px solid var(--secondary-color);
-        }
-
-        .card:hover {
-            transform: translateY(-5px);
-            box-shadow: 0 10px 25px rgba(0,0,0,0.08);
-        }
-
-        .card h3 {
-            margin-top: 0;
-            margin-bottom: 5px;
-            color: var(--primary-color);
-        }
-
-        .card h4 {
-            margin: 0 0 10px 0;
-            color: var(--text-color);
-            font-weight: 500;
-        }
-
-        .date {
-            color: var(--light-text);
-            font-size: 0.9rem;
-            margin-bottom: 15px;
-            font-style: italic;
-        }
-
-        ul {
-            padding-left: 20px;
-            color: var(--light-text);
-        }
-
-        /* 技能标签 */
-        .skills-container {
-            background: #ffffff;
-            padding: 30px;
-            border-radius: 12px;
-            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
-            text-align: center;
-        }
-
-        .skill-tag {
-            display: inline-block;
-            background: #e6f3fa;
-            color: var(--secondary-color);
-            padding: 8px 18px;
-            margin: 8px;
-            border-radius: 20px;
-            font-size: 0.95rem;
-            font-weight: 500;
-            transition: all 0.2s;
-        }
-
-        .skill-tag:hover {
-            background: var(--secondary-color);
-            color: #ffffff;
-        }
-
-        /* 页脚 */
-        footer {
-            background: var(--primary-color);
-            color: #ffffff;
-            text-align: center;
-            padding: 2.5rem 0;
-            margin-top: 3rem;
-        }
-
-        footer a {
-            color: #8ab4f8;
-            text-decoration: none;
-            margin: 0 10px;
-        }
-
-        footer a:hover {
-            text-decoration: underline;
-        }
-
-        /* 移动端适配 */
-        @media(max-width: 768px) {
-            .hero {
-                flex-direction: column-reverse;
-                text-align: center;
-                padding-top: 3rem;
-            }
-            .hero-text {
-                padding-right: 0;
-                margin-top: 2rem;
-            }
-            header {
-                flex-direction: column;
-                padding: 1rem;
-            }
-            nav {
-                margin-top: 15px;
-            }
-            nav a {
-                margin: 0 10px;
-                font-size: 0.9rem;
-            }
-        }
+        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif; margin: 0; padding: 0; color: var(--text-color); background-color: var(--bg-color); line-height: 1.6; }
+        header { background: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; padding: 1rem 5%; align-items: center; }
+        .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary-color); text-decoration: none; }
+        nav a { margin-left: 25px; text-decoration: none; color: var(--text-color); font-weight: 500; transition: color 0.3s; }
+        nav a:hover { color: var(--secondary-color); }
+        section { padding: 5rem 5%; max-width: 1000px; margin: auto; }
+        .section-title { text-align: center; font-size: 2.2rem; margin-bottom: 3rem; color: var(--primary-color); position: relative; }
+        .section-title::after { content: ''; width: 60px; height: 4px; background: var(--secondary-color); display: block; margin: 15px auto 0; border-radius: 2px; }
+        .hero { display: flex; align-items: center; justify-content: space-between; min-height: 70vh; padding-top: 2rem; }
+        .hero-text { flex: 1; padding-right: 3rem; }
+        .hero-text h1 { font-size: 3rem; margin-bottom: 10px; color: var(--primary-color); }
+        .hero-text h2 { font-size: 1.5rem; color: var(--secondary-color); margin-bottom: 20px; font-weight: 400; }
+        .hero-text p { font-size: 1.1rem; color: var(--light-text); margin-bottom: 30px; }
+        .hero-img { flex: 0.5; text-align: center; }
+        .hero-img img { width: 280px; height: 280px; border-radius: 50%; object-fit: cover; border: 8px solid #ffffff; box-shadow: 0 10px 30px rgba(0,0,0,0.1); }
+        .btn { display: inline-block; padding: 12px 30px; background: var(--secondary-color); color: #ffffff; text-decoration: none; border-radius: 30px; transition: all 0.3s; font-weight: bold; }
+        .btn:hover { background: #1f6391; transform: translateY(-3px); box-shadow: 0 6px 12px rgba(41, 128, 185, 0.3); }
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 25px; }
+        .card { background: #ffffff; padding: 25px; border-radius: 12px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); transition: transform 0.3s; border-top: 4px solid var(--secondary-color); }
+        .card:hover { transform: translateY(-5px); box-shadow: 0 10px 25px rgba(0,0,0,0.08); }
+        .card h3 { margin-top: 0; margin-bottom: 5px; color: var(--primary-color); }
+        .card h4 { margin: 0 0 10px 0; color: var(--text-color); font-weight: 500; }
+        .date { color: var(--light-text); font-size: 0.9rem; margin-bottom: 15px; font-style: italic; }
+        ul { padding-left: 20px; color: var(--light-text); }
+        .skills-container { background: #ffffff; padding: 30px; border-radius: 12px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
+        .skill-tag { display: inline-block; background: #e6f3fa; color: var(--secondary-color); padding: 8px 18px; margin: 8px; border-radius: 20px; font-size: 0.95rem; font-weight: 500; transition: all 0.2s; }
+        .skill-tag:hover { background: var(--secondary-color); color: #ffffff; }
+        footer { background: var(--primary-color); color: #ffffff; text-align: center; padding: 2.5rem 0; margin-top: 3rem; }
+        footer a { color: #8ab4f8; text-decoration: none; margin: 0 10px; }
+        footer a:hover { text-decoration: underline; }
+        @media(max-width: 768px) { .hero { flex-direction: column-reverse; text-align: center; padding-top: 3rem; } .hero-text { padding-right: 0; margin-top: 2rem; } header { flex-direction: column; padding: 1rem; } nav { margin-top: 15px; } }
     </style>
 </head>
 <body>
 
-    <!-- 导航栏 -->
     <header>
-        <a href="#" class="logo">[你的名字]</a>
+        <a href="#" class="logo">陈泉 (Chen Quan)</a>
         <nav>
             <a href="#about">关于我</a>
-            <a href="#education">教育背景</a>
-            <a href="#projects">项目经历</a>
+            <a href="#education">教育与荣誉</a>
+            <a href="#projects">科研实践</a>
             <a href="#skills">专业技能</a>
         </nav>
     </header>
 
-    <!-- 首屏简介 -->
     <section class="hero" id="about">
         <div class="hero-text">
-            <h1>你好，我是 [你的名字]</h1>
-            <h2>[目标职位，例如：数据分析师 / 前端开发工程师 / 算法工程师]</h2>
-            <p>[一句话简介：例如，某某大学硕士研究生，研究方向为机器学习与自然语言处理。拥有扎实的编程功底和良好的数据敏感度。热爱技术，致力于用代码解决实际问题。]</p>
-            <!-- 在 href 里放你的简历 PDF 文件链接，例如 ./resume.pdf -->
-            <a href="[你的简历文件链接.pdf]" class="btn" target="_blank">下载我的简历 (PDF)</a>
+            <h1>你好，我是陈泉</h1>
+            <h2>测绘工程硕士研究生 | 遥感算法研发与应用</h2>
+            <p>现就读于昆明理工大学国土资源工程学院，致力于遥感算法的研发与微波数据反演。拥有扎实的测绘与遥感物理理论基础，以及基于 GEE 的海量数据工程落地经验。兼具出色的团队协作与组织管理能力，期待将前沿遥感算法转化为解决实际痛点的落地应用。</p>
+            <a href="#" class="btn">联系我 (13163393951)</a>
         </div>
         <div class="hero-img">
-            <!-- 替换成你自己的照片，建议用干净背景的职业照，放到项目目录中 -->
-            <img src="https://via.placeholder.com/280x280.png?text=Profile+Photo" alt="个人照片">
+            <!-- 记得将你的简历证件照命名为 profile.jpg 放在同一文件夹下 -->
+            <img src="profile.jpg" alt="陈泉的照片">
         </div>
     </section>
 
-    <!-- 教育背景 -->
     <section id="education">
-        <h2 class="section-title">教育背景</h2>
+        <h2 class="section-title">教育与荣誉</h2>
         <div class="grid">
             <div class="card">
-                <h3>[硕士所在大学名称]</h3>
-                <h4>[你的专业名称] - 硕士研究生</h4>
-                <div class="date">202X年9月 - 202X年6月</div>
+                <h3>昆明理工大学</h3>
+                <h4>测绘工程 - 硕士研究生</h4>
+                <div class="date">2024.09 - 至今</div>
                 <ul>
-                    <li><strong>主修课程：</strong> [列举2-3门与求职岗位强相关的核心课程]</li>
-                    <li><strong>研究方向：</strong> [你的研究方向]</li>
-                    <li><strong>荣誉奖项：</strong> [例如：国家奖学金 / 一等学业奖学金]</li>
+                    <li><strong>学业成绩：</strong> GPA 3.77/4.0 (平均分 85.95)</li>
+                    <li><strong>所获荣誉：</strong> 连续两年获校级学业一等奖学金 (2024, 2025)</li>
+                    <li><strong>学生工作：</strong> 班长、团支部副书记；获校级优秀研究生干部、社会实践先进个人</li>
                 </ul>
             </div>
             <div class="card">
-                <h3>[本科所在大学名称]</h3>
-                <h4>[你的专业名称] - 学士</h4>
-                <div class="date">202X年9月 - 202X年6月</div>
+                <h3>黑龙江工程学院</h3>
+                <h4>测绘工程 - 学士</h4>
+                <div class="date">2020.09 - 2024.09</div>
                 <ul>
-                    <li><strong>主修课程：</strong> [列举2-3门核心课程]</li>
-                    <li><strong>GPA：</strong> [如果有优势可以写，例如 3.8/4.0，前5%]</li>
-                    <li><strong>荣誉奖项：</strong> [优秀毕业生等]</li>
+                    <li><strong>核心素质：</strong> 掌握测绘工程核心理论，具备扎实的数理基础与空间数据处理能力。</li>
+                    <li><strong>综合证书：</strong> 英语 CET-6 (431分) / CET-4 (443分)，全国计算机等级考试三级 (NCRE)。</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- 项目/实习经历 (求职最重要部分) -->
     <section id="projects">
-        <h2 class="section-title">项目与实习经历</h2>
+        <h2 class="section-title">科研与实践经历</h2>
         <div class="grid">
             <div class="card">
-                <h3>[实习公司或重点项目名称]</h3>
-                <h4>[你的角色，例如：算法实习生 / 项目核心开发者]</h4>
-                <div class="date">202X年X月 - 202X年X月</div>
+                <h3>全球主被动微波协同土壤水分反演系统</h3>
+                <h4>核心算法设计与研发</h4>
+                <div class="date">学术论文 (Under Review in IEEE TGRS)</div>
                 <ul>
-                    <li><strong>工作内容：</strong> 使用 [某项技术/工具] 负责 [具体做了什么任务]，解决了 [什么痛点]。</li>
-                    <li><strong>业务成果：</strong> [用数据说话，例如：将模型准确率提升了15%，或者缩短了XX%的响应时间]。</li>
-                    <li><strong>技术栈：</strong> Python, TensorFlow, MySQL</li>
+                    <li><strong>算法创新：</strong> 耦合 Mironov 介电与辐射传输模型，独创像元级自适应权重调节与 VWC 阈值回退策略，突破高植被区反演瓶颈。</li>
+                    <li><strong>数据工程：</strong> 基于 GEE 平台，利用 <code>qualityMosaic</code> 实现网格搜索代价函数的无损降维，攻克局部入射角 (LIA) 独立沙盒地形校正。</li>
+                    <li><strong>应用成果：</strong> 成功实现 Sentinel-1 与 SMAP 升降轨全球级数据的高效自动化反演。</li>
                 </ul>
             </div>
             <div class="card">
-                <h3>[研究生课题或另一个重要项目]</h3>
-                <h4>[项目负责人]</h4>
-                <div class="date">202X年X月 - 202X年X月</div>
+                <h3>2025 ERSI杯中国大学生GIS软件开发竞赛</h3>
+                <h4>遥感应用组 - 优胜奖</h4>
+                <div class="date">2025.11 (中国测绘学会颁发)</div>
                 <ul>
-                    <li><strong>研究背景：</strong> 针对 [行业现状或技术难点] 提出了一种创新的解决方案。</li>
-                    <li><strong>实施过程：</strong> 设计并实现了 [什么系统/算法]，独立完成 [哪部分的开发]。</li>
-                    <li><strong>学术成果：</strong> [例如：发表了一篇SCI论文，或申请了一项国家专利]。</li>
+                    <li><strong>竞赛项目：</strong> 《北极海冰面积时空变化特性与影响因素分析》</li>
+                    <li><strong>实践贡献：</strong> 参与遥感数据的处理与分析，结合 GIS 空间分析工具，深度挖掘海冰变化特征，展现了良好的团队协作与技术攻关能力。</li>
                 </ul>
             </div>
         </div>
     </section>
 
-    <!-- 专业技能 -->
     <section id="skills">
         <h2 class="section-title">专业技能</h2>
         <div class="skills-container">
-            <!-- 根据你求职的方向自由增删这些标签 -->
-            <span class="skill-tag">Python</span>
-            <span class="skill-tag">Java</span>
-            <span class="skill-tag">C++</span>
-            <span class="skill-tag">SQL</span>
-            <span class="skill-tag">机器学习</span>
-            <span class="skill-tag">数据分析</span>
-            <span class="skill-tag">Pytorch</span>
-            <span class="skill-tag">Linux</span>
-            <span class="skill-tag">Git</span>
-            <span class="skill-tag">英语 CET-6</span>
+            <span class="skill-tag">Google Earth Engine (GEE)</span>
+            <span class="skill-tag">JavaScript / Python</span>
+            <span class="skill-tag">微波遥感物理模型</span>
+            <span class="skill-tag">GIS 空间分析</span>
+            <span class="skill-tag">海量数据处理</span>
+            <span class="skill-tag">科研论文写作</span>
+            <span class="skill-tag">团队协作与管理</span>
         </div>
     </section>
 
-    <!-- 页脚/联系方式 -->
     <footer>
         <h2>联系我</h2>
-        <p>期待与您沟通！请通过以下方式联系我：</p>
-        <p>
-            <!-- 替换成你的真实联系方式 -->
-            Email: <a href="mailto:your.email@example.com">your.email@example.com</a> |
-            Phone: 138-XXXX-XXXX
-        </p>
-        <p>
-            <a href="[你的GitHub主页链接]" target="_blank">GitHub</a> |
-            <a href="[你的LinkedIn链接或博客链接]" target="_blank">LinkedIn</a>
-        </p>
+        <p>Email: <a href="mailto:chenquan@stu.kust.edu.cn">chenquan@stu.kust.edu.cn</a> | Phone: 131-6339-3951</p>
         <p style="font-size: 0.8rem; margin-top: 20px; color: #aaa;">
-            © 2026 [你的名字]. All rights reserved. 
+            © 2026 陈泉 (Chen Quan). All rights reserved. 
         </p>
     </footer>
 
