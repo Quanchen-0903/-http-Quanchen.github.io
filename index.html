@@ -5,56 +5,158 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>陈泉 (Chen Quan) - 个人简历</title>
     <style>
+        /* Apple 风格的核心变量 */
         :root {
-            --primary-color: #2c3e50; 
-            --secondary-color: #2980b9; 
-            --bg-color: #f8f9fa; 
-            --text-color: #333333; 
-            --light-text: #666666; 
+            --bg-color: #f5f5f7; 
+            --card-bg: #ffffff;
+            --primary-color: #1d1d1f; 
+            --secondary-color: #0066cc; 
+            --text-color: #1d1d1f;
+            --light-text: #86868b; 
         }
-        body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; margin: 0; padding: 0; color: var(--text-color); background-color: var(--bg-color); line-height: 1.6; }
-        header { background: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; padding: 1rem 5%; align-items: center; }
-        .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary-color); text-decoration: none; }
-        nav a { margin-left: 20px; text-decoration: none; color: var(--text-color); font-weight: 500; transition: color 0.3s; font-size: 0.95rem; }
-        nav a:hover { color: var(--secondary-color); }
-        section { padding: 4.5rem 5%; max-width: 1000px; margin: auto; }
-        .section-title { text-align: center; font-size: 2.1rem; margin-bottom: 2.5rem; color: var(--primary-color); position: relative; }
-        .section-title::after { content: ''; width: 60px; height: 4px; background: var(--secondary-color); display: block; margin: 15px auto 0; border-radius: 2px; }
-        .hero { display: flex; align-items: center; justify-content: space-between; min-height: 65vh; padding-top: 2rem; }
-        .hero-text { flex: 1; padding-right: 3rem; }
-        .hero-text h1 { font-size: 2.8rem; margin-bottom: 8px; color: var(--primary-color); }
-        .hero-text h2 { font-size: 1.4rem; color: var(--secondary-color); margin-bottom: 15px; font-weight: 400; }
+
+        /* 字体与基础排版 */
+        body { 
+            font-family: "SF Pro Text", "SF Pro Icons", "Helvetica Neue", "Helvetica", "Arial", sans-serif; 
+            margin: 0; 
+            padding: 0; 
+            color: var(--text-color); 
+            background-color: var(--bg-color); 
+            line-height: 1.47059;
+            letter-spacing: -0.022em;
+            -webkit-font-smoothing: antialiased; 
+        }
+
+        /* 顶部毛玻璃导航栏 */
+        header { 
+            background: rgba(255, 255, 255, 0.72); 
+            backdrop-filter: saturate(180%) blur(20px); 
+            -webkit-backdrop-filter: saturate(180%) blur(20px); 
+            position: sticky; 
+            top: 0; 
+            z-index: 100; 
+            display: flex; 
+            justify-content: space-between; 
+            padding: 0.8rem 5%; 
+            align-items: center; 
+            border-bottom: 1px solid rgba(0,0,0,0.05);
+        }
+        .logo { font-size: 1.2rem; font-weight: 600; color: var(--primary-color); text-decoration: none; letter-spacing: -0.01em; }
+        nav a { margin-left: 24px; text-decoration: none; color: var(--text-color); font-weight: 400; font-size: 0.85rem; opacity: 0.8; transition: opacity 0.3s; }
+        nav a:hover { opacity: 1; color: var(--secondary-color); }
+
+        /* 通用区块设置 */
+        section { padding: 5rem 5%; max-width: 980px; margin: auto; }
+        .section-title { text-align: center; font-size: 2.5rem; font-weight: 600; margin-bottom: 3rem; color: var(--primary-color); letter-spacing: -0.03em; }
+
+        /* 首屏简介 */
+        .hero { display: flex; align-items: center; justify-content: space-between; min-height: 60vh; padding-top: 4rem; }
+        .hero-text { flex: 1; padding-right: 4rem; }
+        .hero-text h1 { font-size: 3.5rem; font-weight: 700; margin-bottom: 0.5rem; color: var(--primary-color); letter-spacing: -0.04em; line-height: 1.05; }
+        .hero-text h2 { font-size: 1.5rem; color: var(--light-text); margin-bottom: 1.5rem; font-weight: 400; }
+        
+        /* 标签设计 */
         .info-tags { margin-bottom: 20px; }
-        .info-tags span { display: inline-block; background: #e9ecef; color: #495057; padding: 4px 12px; border-radius: 15px; font-size: 0.85rem; margin-right: 8px; margin-bottom: 8px; font-weight: 500;}
-        .hero-text p { font-size: 1.05rem; color: var(--light-text); margin-bottom: 25px; text-align: justify; }
-        .hero-img { flex: 0.45; text-align: center; }
-        .hero-img img { width: 260px; height: 260px; border-radius: 50%; object-fit: cover; border: 6px solid #ffffff; box-shadow: 0 10px 25px rgba(0,0,0,0.1); }
-        .btn { display: inline-block; padding: 10px 26px; background: var(--secondary-color); color: #ffffff; text-decoration: none; border-radius: 30px; transition: all 0.3s; font-weight: bold; }
-        .btn:hover { background: #1f6391; transform: translateY(-2px); box-shadow: 0 4px 10px rgba(41, 128, 185, 0.3); }
-        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 20px; }
-        .card { background: #ffffff; padding: 22px 25px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); transition: transform 0.3s; border-top: 4px solid var(--secondary-color); }
-        .card:hover { transform: translateY(-4px); box-shadow: 0 8px 20px rgba(0,0,0,0.07); }
-        .card h3 { margin-top: 0; margin-bottom: 5px; color: var(--primary-color); font-size: 1.25rem;}
-        .card h4 { margin: 0 0 8px 0; color: var(--text-color); font-weight: 500; font-size: 1.05rem;}
-        .date { color: var(--light-text); font-size: 0.9rem; margin-bottom: 12px; font-style: italic; }
+        .info-tags span { display: inline-block; background: #e8e8ed; color: #495057; padding: 6px 14px; border-radius: 20px; font-size: 0.85rem; margin-right: 8px; margin-bottom: 8px; font-weight: 500;}
+        .hero-text p { font-size: 1.1rem; color: var(--light-text); margin-bottom: 25px; text-align: justify; line-height: 1.5; }
+        
+        .btn { display: inline-block; padding: 12px 24px; background: var(--secondary-color); color: #ffffff; text-decoration: none; border-radius: 980px; transition: all 0.3s; font-weight: 400; font-size: 1rem; }
+        .btn:hover { background: #0058b0; transform: scale(1.02); }
+
+        /* === 多媒体栈（视频 + 滚动图片）样式 === */
+        .hero-media { 
+            flex: 0.5; 
+            display: flex; 
+            flex-direction: column; 
+            gap: 20px; 
+            align-items: center; 
+        }
+        
+        .hero-video { 
+            width: 100%; 
+            max-width: 380px; 
+            border-radius: 20px; 
+            box-shadow: 0 14px 40px rgba(0,0,0,0.12); 
+            object-fit: cover; 
+            background-color: #000; 
+        }
+
+        .slider-container { 
+            width: 100%; 
+            max-width: 380px; 
+            overflow: hidden; 
+            border-radius: 16px; 
+            box-shadow: 0 10px 30px rgba(0,0,0,0.08); 
+            background: var(--card-bg); 
+            position: relative; 
+            padding: 10px 0; 
+        }
+        .slider-track { 
+            display: flex; 
+            /* 10张图 + 10张复制图 = 20张，每张宽度加间距约 170px */
+            width: calc(170px * 20); 
+            /* 将动画时间延长到 40 秒，保证 10 张图滚动平滑优雅 */
+            animation: scroll 40s linear infinite; 
+        }
+        .slider-track img { 
+            width: 160px; 
+            height: 110px; 
+            object-fit: cover; 
+            border-radius: 8px; 
+            margin: 0 5px; 
+            box-shadow: 0 2px 8px rgba(0,0,0,0.05);
+        }
+        .slider-container:hover .slider-track { 
+            animation-play-state: paused; 
+        }
+        
+        @keyframes scroll {
+            0% { transform: translateX(0); }
+            /* 移动 10 张图的距离 */
+            100% { transform: translateX(calc(-170px * 10)); } 
+        }
+
+        /* 苹果风圆角大卡片 */
+        .grid { display: grid; grid-template-columns: repeat(auto-fit, minmax(320px, 1fr)); gap: 24px; }
+        .card { background: var(--card-bg); padding: 32px; border-radius: 18px; box-shadow: 0 4px 24px rgba(0,0,0,0.04); transition: transform 0.4s cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 0.4s ease; }
+        .card:hover { transform: scale(1.02); box-shadow: 0 12px 40px rgba(0,0,0,0.08); }
+        .card h3 { margin-top: 0; margin-bottom: 6px; color: var(--primary-color); font-size: 1.3rem; font-weight: 600; letter-spacing: -0.01em;}
+        .card h4 { margin: 0 0 10px 0; color: var(--text-color); font-weight: 400; font-size: 1.05rem;}
+        .date { color: var(--light-text); font-size: 0.9rem; margin-bottom: 16px; }
         ul { padding-left: 20px; color: var(--light-text); margin-bottom: 0; }
-        li { margin-bottom: 6px; }
+        li { margin-bottom: 8px; }
+
+        /* 技能与附件标签 */
+        .skills-container { background: var(--card-bg); padding: 32px; border-radius: 18px; box-shadow: 0 4px 24px rgba(0,0,0,0.04); }
+        .skill-tag, .doc-tag { display: inline-block; background: #f5f5f7; color: var(--primary-color); padding: 10px 18px; margin: 6px 8px 6px 0; border-radius: 12px; font-size: 0.95rem; font-weight: 500; transition: all 0.2s; text-decoration: none; border: 1px solid transparent; }
+        .skill-tag:hover, .doc-tag:hover { background: #e8e8ed; color: var(--secondary-color); transform: scale(1.03); cursor: pointer; }
         
-        /* 附件与证书标签容器样式 */
-        .attachments-container { background: #ffffff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
-        .attachment-group { margin-bottom: 20px; }
-        .attachment-group h4 { color: var(--primary-color); margin-bottom: 10px; border-bottom: 1px dashed #eee; padding-bottom: 5px; }
-        .doc-tag { display: inline-block; background: #e6f3fa; color: var(--secondary-color); padding: 8px 16px; margin: 6px 8px 6px 0; border-radius: 20px; font-size: 0.9rem; font-weight: 500; transition: all 0.2s; text-decoration: none; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
-        .doc-tag:hover { background: var(--secondary-color); color: #ffffff; transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.15); }
-        
-        footer { background: var(--primary-color); color: #ffffff; text-align: center; padding: 2.5rem 0; margin-top: 3rem; }
-        footer a { color: #8ab4f8; text-decoration: none; margin: 0 8px; }
+        .attachments-container { background: var(--card-bg); padding: 32px; border-radius: 18px; box-shadow: 0 4px 24px rgba(0,0,0,0.04); }
+        .attachment-group { margin-bottom: 25px; }
+        .attachment-group:last-child { margin-bottom: 0; }
+        .attachment-group h4 { color: var(--primary-color); margin-bottom: 12px; font-weight: 600; }
+
+        /* 极简页脚 */
+        footer { background: var(--bg-color); color: var(--light-text); border-top: 1px solid #d2d2d7; text-align: center; padding: 3rem 0; margin-top: 4rem; font-size: 0.85rem; }
+        footer h2 { color: var(--primary-color); font-size: 1.2rem; font-weight: 600; margin-bottom: 10px; }
+        footer a { color: var(--secondary-color); text-decoration: none; margin: 0 8px; }
         footer a:hover { text-decoration: underline; }
-        @media(max-width: 768px) { .hero { flex-direction: column-reverse; text-align: center; padding-top: 2rem; } .hero-text { padding-right: 0; margin-top: 1.5rem; } header { flex-direction: column; padding: 1rem; } nav { margin-top: 12px; } nav a { margin: 0 8px; font-size: 0.85rem;} }
+
+        /* 移动端适配 */
+        @media(max-width: 768px) { 
+            .hero { flex-direction: column-reverse; text-align: center; padding-top: 2rem; } 
+            .hero-text { padding-right: 0; margin-top: 2.5rem; } 
+            .hero-text h1 { font-size: 2.5rem; }
+            .hero-media { width: 100%; }
+            header { flex-direction: column; padding: 1rem; } 
+            nav { margin-top: 15px; display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; } 
+            nav a { margin: 0; font-size: 0.85rem;} 
+        }
     </style>
 </head>
 <body>
 
+    <!-- 顶部毛玻璃导航栏 -->
     <header>
         <a href="#" class="logo">陈泉</a>
         <nav>
@@ -67,7 +169,7 @@
         </nav>
     </header>
 
-    <!-- 个人陈述 (融合在Hero区) -->
+    <!-- 个人陈述与多媒体展示栈 -->
     <section class="hero" id="about">
         <div class="hero-text">
             <h1>你好，我是陈泉</h1>
@@ -79,11 +181,46 @@
                 <span>🚴‍♂️ 骑行</span>
             </div>
             <p>系昆明理工大学测绘工程专业在读硕士研究生。在校期间担任班长与团支部副书记，工作勤恳负责。学业成绩优异（GPA 3.77，平均分 85.95），连续两年荣获一等学业奖学金，并取得英语四六级及计算机三级证书。积极参与各类校园竞赛与实践活动，具有积极向上的精神、吃苦耐劳的人生态度以及良好的团队协作能力。</p>
-            <p style="font-size: 0.95rem; color: var(--secondary-color); font-style: italic;">"如果我能有幸得到这个宝贵的工作机会，我一定会努力工作，恪尽职守，在岗位上发光发热！"</p>
+            <p style="font-size: 0.95rem; color: var(--secondary-color); font-weight: 500;">"如果我能有幸得到这个宝贵的工作机会，我一定会努力工作，恪尽职守，在岗位上发光发热！"</p>
+            <br>
             <a href="mailto:chenquan@stu.kust.edu.cn" class="btn">联系我 (13163393951)</a>
         </div>
-        <div class="hero-img">
-            <img src="profile.jpg" alt="陈泉的个人照片">
+        
+        <!-- 右侧多媒体展示栈 -->
+        <div class="hero-media">
+            <!-- 1. 自动播放的视频卡片 (请确保根目录下有 hero-video.mp4 文件) -->
+            <video class="hero-video" autoplay loop muted playsinline>
+                <source src="hero-video.mp4" type="video/mp4">
+            </video>
+            
+            <!-- 2. 滚动的摄影作品相册 (包含最新重命名的 10 张图) -->
+            <div class="slider-container">
+                <div class="slider-track" title="鼠标悬停暂停滚动">
+                    <!-- 原始的 10 张图 -->
+                    <img src="lake_wind.jpg" alt="摄影作品1" loading="lazy">
+                    <img src="lake_wind2.jpg" alt="摄影作品2" loading="lazy">
+                    <img src="lake_wind3.jpg" alt="摄影作品3" loading="lazy">
+                    <img src="lake_wind4.jpg" alt="摄影作品4" loading="lazy">
+                    <img src="lake_wind6.jpg" alt="摄影作品5" loading="lazy">
+                    <img src="lake_wind7.jpg" alt="摄影作品6" loading="lazy">
+                    <img src="lake_wind8.jpg" alt="摄影作品7" loading="lazy">
+                    <img src="lake_wind9.jpg" alt="摄影作品8" loading="lazy">
+                    <img src="lake_wind10.jpg" alt="摄影作品9" loading="lazy">
+                    <img src="lake_wind11.jpg" alt="摄影作品10" loading="lazy">
+                    
+                    <!-- 必须完全复制一遍这 10 张图，实现无缝循环滚动 -->
+                    <img src="lake_wind.jpg" alt="摄影作品1" loading="lazy">
+                    <img src="lake_wind2.jpg" alt="摄影作品2" loading="lazy">
+                    <img src="lake_wind3.jpg" alt="摄影作品3" loading="lazy">
+                    <img src="lake_wind4.jpg" alt="摄影作品4" loading="lazy">
+                    <img src="lake_wind6.jpg" alt="摄影作品5" loading="lazy">
+                    <img src="lake_wind7.jpg" alt="摄影作品6" loading="lazy">
+                    <img src="lake_wind8.jpg" alt="摄影作品7" loading="lazy">
+                    <img src="lake_wind9.jpg" alt="摄影作品8" loading="lazy">
+                    <img src="lake_wind10.jpg" alt="摄影作品9" loading="lazy">
+                    <img src="lake_wind11.jpg" alt="摄影作品10" loading="lazy">
+                </div>
+            </div>
         </div>
     </section>
 
@@ -96,7 +233,9 @@
                 <h4>国土资源工程学院 - 测绘工程 (专业型硕士)</h4>
                 <div class="date">2024.09 - 至今</div>
                 <ul>
-                    <li><strong>学业表现：</strong> GPA 3.77 / 课程总平均分 85.95</li>
+                    <li><strong>学业表现：</strong> GPA 3.77 / 课程总平均分 85.95 
+                        <a href="transcript.pdf" target="_blank" style="color: var(--secondary-color); text-decoration: none;">[📊 成绩单]</a>
+                    </li>
                 </ul>
             </div>
             <div class="card">
@@ -113,12 +252,17 @@
     <!-- 技能与平台 -->
     <section id="skills">
         <h2 class="section-title">技能与平台</h2>
-        <div class="card" style="max-width: 800px; margin: auto;">
-            <ul>
-                <li><strong>外语水平：</strong> 全国大学英语六级 CET-6 (431分)、全国大学英语四级 CET-4 (443分)</li>
-                <li><strong>计算机能力：</strong> 全国计算机等级考试三级 (NCRE-3)</li>
-                <li><strong>工具与平台：</strong> 熟练掌握 GEE (Google Earth Engine)、ArcGIS 平台进行大规模空间数据分析</li>
-            </ul>
+        <div class="skills-container" style="max-width: 800px; margin: auto; text-align: left;">
+            <h4 style="color: var(--primary-color); margin-bottom: 12px; font-weight: 600;">外语水平</h4>
+            <a href="cet6.pdf" target="_blank" style="text-decoration: none;"><span class="skill-tag">全国大学英语六级 CET-6 (431分) ↗</span></a>
+            <a href="cet4.pdf" target="_blank" style="text-decoration: none;"><span class="skill-tag">全国大学英语四级 CET-4 (443分) ↗</span></a>
+            
+            <h4 style="margin: 24px 0 12px 0; color: var(--primary-color); font-weight: 600;">计算机能力</h4>
+            <a href="ncre3.pdf" target="_blank" style="text-decoration: none;"><span class="skill-tag">全国计算机等级考试三级 (NCRE-3) ↗</span></a>
+            
+            <h4 style="margin: 24px 0 12px 0; color: var(--primary-color); font-weight: 600;">工具与平台</h4>
+            <span class="skill-tag" style="cursor: default;">GEE (Google Earth Engine)</span>
+            <span class="skill-tag" style="cursor: default;">ArcGIS 空间数据分析</span>
         </div>
     </section>
 
@@ -131,7 +275,9 @@
             <div class="date">2025.11 (中国测绘学会主办)</div>
             <ul>
                 <li><strong>参赛作品：</strong> D573《北极海冰面积时空变化特性与影响因素分析》</li>
-                <li><strong>所获奖项：</strong> 优胜奖</li>
+                <li><strong>所获奖项：</strong> <strong>优胜奖</strong> 
+                    <a href="gis_award.jpg" target="_blank" style="color: var(--secondary-color); text-decoration: none;">[🏆 获奖证书]</a>
+                </li>
                 <li><strong>个人职责：</strong> 参与遥感数据的获取、预处理与分析，结合 GIS 空间分析工具，深度挖掘海冰变化特征，展现了良好的团队协作与技术攻关能力。</li>
             </ul>
         </div>
@@ -142,23 +288,41 @@
         <h2 class="section-title">奖惩情况</h2>
         <div class="grid">
             <div class="card">
-                <h3>🏆 学业与骨干类表彰</h3>
+                <h3>学业与骨干类表彰</h3>
                 <div class="date">校级荣誉</div>
                 <ul>
-                    <li><strong>2026.05：</strong> 荣获校级优秀研究生干部称号</li>
-                    <li><strong>2025.12：</strong> 荣获校级研究生学业奖学金 <strong>一等奖学金</strong></li>
-                    <li><strong>2025.05：</strong> 荣获校级研究生社会实践先进个人称号</li>
-                    <li><strong>2024.11：</strong> 荣获校级研究生学业奖学金 <strong>一等奖学金</strong></li>
+                    <li><strong>2026.05：</strong> 荣获校级优秀研究生干部称号
+                        <a href="excellent_cadre_2026.jpg" target="_blank" style="color: var(--secondary-color); text-decoration: none;">[📜 证书]</a>
+                    </li>
+                    <li><strong>2025.12：</strong> 荣获校级研究生学业奖学金 <strong>一等奖学金</strong>
+                        <a href="scholarship_2025.jpg" target="_blank" style="color: var(--secondary-color); text-decoration: none;">[📜 证书]</a>
+                    </li>
+                    <li><strong>2025.05：</strong> 荣获校级研究生社会实践先进个人称号
+                        <a href="social_practice_2025.jpg" target="_blank" style="color: var(--secondary-color); text-decoration: none;">[📜 证书]</a>
+                    </li>
+                    <li><strong>2024.11：</strong> 荣获校级研究生学业奖学金 <strong>一等奖学金</strong>
+                        <a href="scholarship_2024.jpg" target="_blank" style="color: var(--secondary-color); text-decoration: none;">[📜 证书]</a>
+                    </li>
                 </ul>
             </div>
             <div class="card">
-                <h3>🎨 综合实践竞赛</h3>
+                <h3>综合实践竞赛</h3>
                 <div class="date">国资院级荣誉</div>
                 <ul>
-                    <li><strong>2025.05 / 2026.04 / 2025.12：</strong> 荣获国资院第五届、第六届樱花杯摄影比赛 <strong>三等奖</strong></li>
-                    <li><strong>2024.12 / 2025.12：</strong> 荣获国资院第四届三行情书大赛最佳人气奖、第五届 <strong>三等奖</strong></li>
-                    <li><strong>2025.06：</strong> 荣获国资院袋动国土设计大赛 <strong>三等奖</strong></li>
-                    <li><strong>2025.05：</strong> 荣获国资院第一届拼贴画比赛 <strong>三等奖</strong></li>
+                    <li><strong>2025.05 / 2026.04 / 2025.12：</strong> 荣获国资院第五届、第六届樱花杯摄影比赛 <strong>三等奖</strong>
+                        <a href="photography_award.jpg" target="_blank" style="color: var(--secondary-color); text-decoration: none;">[🖼️ 证书1]</a>
+                        <a href="photography_award2.jpg" target="_blank" style="color: var(--secondary-color); text-decoration: none;">[🖼️ 证书2]</a>
+                    </li>
+                    <li><strong>2024.12 / 2025.12：</strong> 荣获国资院第四届三行情书大赛最佳人气奖、第五届 <strong>三等奖</strong>
+                        <a href="award_poem2.jpg" target="_blank" style="color: var(--secondary-color); text-decoration: none;">[🖼️ 证书1]</a>
+                        <a href="award_poem.jpg" target="_blank" style="color: var(--secondary-color); text-decoration: none;">[🖼️ 证书2]</a>
+                    </li>
+                    <li><strong>2025.06：</strong> 荣获国资院袋动国土设计大赛 <strong>三等奖</strong>
+                        <a href="award_design2.jpg" target="_blank" style="color: var(--secondary-color); text-decoration: none;">[🖼️ 证书]</a>
+                    </li>
+                    <li><strong>2025.05：</strong> 荣获国资院第一届拼贴画比赛 <strong>三等奖</strong>
+                        <a href="award_design.jpg" target="_blank" style="color: var(--secondary-color); text-decoration: none;">[🖼️ 证书]</a>
+                    </li>
                 </ul>
             </div>
         </div>
@@ -167,43 +331,43 @@
     <!-- 附件与证书集中展示区 -->
     <section id="attachments">
         <h2 class="section-title">证书与附件展示</h2>
-        <div class="attachments-container">
+        <div class="attachments-container" style="max-width: 800px; margin: auto;">
             
             <div class="attachment-group">
-                <h4>📚 学业与技能凭证 (PDF格式)</h4>
-                <a href="transcript.pdf" target="_blank" class="doc-tag">📊 硕士成绩单</a>
-                <a href="cet6.pdf" target="_blank" class="doc-tag">📝 英语六级 (CET-6)</a>
-                <a href="cet4.pdf" target="_blank" class="doc-tag">📝 英语四级 (CET-4)</a>
-                <a href="ncre3.pdf" target="_blank" class="doc-tag">💻 计算机三级 (NCRE)</a>
+                <h4>学业与技能凭证 (PDF)</h4>
+                <a href="transcript.pdf" target="_blank" class="doc-tag">硕士成绩单 ↗</a>
+                <a href="cet6.pdf" target="_blank" class="doc-tag">英语六级 (CET-6) ↗</a>
+                <a href="cet4.pdf" target="_blank" class="doc-tag">英语四级 (CET-4) ↗</a>
+                <a href="ncre3.pdf" target="_blank" class="doc-tag">计算机三级 (NCRE) ↗</a>
             </div>
 
             <div class="attachment-group">
-                <h4>🏆 骨干与奖学金荣誉 (JPG格式)</h4>
-                <a href="scholarship_2025.jpg" target="_blank" class="doc-tag">🥇 2025一等学业奖学金</a>
-                <a href="scholarship_2024.jpg" target="_blank" class="doc-tag">🥇 2024一等学业奖学金</a>
-                <a href="excellent_cadre_2026.jpg" target="_blank" class="doc-tag">🎖️ 优秀研究生干部</a>
-                <a href="social_practice_2025.jpg" target="_blank" class="doc-tag">🎖️ 社会实践先进个人</a>
+                <h4>骨干与奖学金荣誉 (JPG)</h4>
+                <a href="scholarship_2025.jpg" target="_blank" class="doc-tag">2025一等学业奖学金 ↗</a>
+                <a href="scholarship_2024.jpg" target="_blank" class="doc-tag">2024一等学业奖学金 ↗</a>
+                <a href="excellent_cadre_2026.jpg" target="_blank" class="doc-tag">优秀研究生干部 ↗</a>
+                <a href="social_practice_2025.jpg" target="_blank" class="doc-tag">社会实践先进个人 ↗</a>
             </div>
 
             <div class="attachment-group">
-                <h4>🎨 竞赛与文体活动证书 (JPG格式)</h4>
-                <a href="gis_award.jpg" target="_blank" class="doc-tag">🌍 易智瑞杯GIS竞赛优胜奖</a>
-                <a href="photography_award.jpg" target="_blank" class="doc-tag">📷 樱花杯摄影(五届)三等奖</a>
-                <a href="photography_award2.jpg" target="_blank" class="doc-tag">📷 樱花杯摄影(六届)三等奖</a>
-                <a href="award_poem2.jpg" target="_blank" class="doc-tag">💌 三行情书最佳人气奖</a>
-                <a href="award_poem.jpg" target="_blank" class="doc-tag">💌 三行情书三等奖</a>
-                <a href="award_design2.jpg" target="_blank" class="doc-tag">🎨 袋动国土设计三等奖</a>
-                <a href="award_design.jpg" target="_blank" class="doc-tag">🖼️ 第一届拼贴画三等奖</a>
+                <h4>竞赛与文体活动证书 (JPG)</h4>
+                <a href="gis_award.jpg" target="_blank" class="doc-tag">易智瑞杯GIS竞赛优胜奖 ↗</a>
+                <a href="photography_award.jpg" target="_blank" class="doc-tag">樱花杯摄影(五届)三等奖 ↗</a>
+                <a href="photography_award2.jpg" target="_blank" class="doc-tag">樱花杯摄影(六届)三等奖 ↗</a>
+                <a href="award_poem2.jpg" target="_blank" class="doc-tag">三行情书最佳人气奖 ↗</a>
+                <a href="award_poem.jpg" target="_blank" class="doc-tag">三行情书三等奖 ↗</a>
+                <a href="award_design2.jpg" target="_blank" class="doc-tag">袋动国土设计三等奖 ↗</a>
+                <a href="award_design.jpg" target="_blank" class="doc-tag">第一届拼贴画三等奖 ↗</a>
             </div>
 
         </div>
     </section>
 
-    <!-- 联系方式 -->
+    <!-- 极简页脚 -->
     <footer>
         <h2>联系我</h2>
         <p>Email: <a href="mailto:chenquan@stu.kust.edu.cn">chenquan@stu.kust.edu.cn</a> | Phone: 131-6339-3951</p>
-        <p style="font-size: 0.8rem; margin-top: 15px; color: #aaa;">
+        <p style="margin-top: 15px; color: #a1a1a6;">
             © 2026 陈泉 (Chen Quan). All rights reserved. 
         </p>
     </footer>
