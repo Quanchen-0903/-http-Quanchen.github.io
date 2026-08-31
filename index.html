@@ -15,7 +15,7 @@
         body { font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif; margin: 0; padding: 0; color: var(--text-color); background-color: var(--bg-color); line-height: 1.6; }
         header { background: #ffffff; box-shadow: 0 2px 10px rgba(0,0,0,0.05); position: sticky; top: 0; z-index: 100; display: flex; justify-content: space-between; padding: 1rem 5%; align-items: center; }
         .logo { font-size: 1.5rem; font-weight: bold; color: var(--primary-color); text-decoration: none; }
-        nav a { margin-left: 25px; text-decoration: none; color: var(--text-color); font-weight: 500; transition: color 0.3s; }
+        nav a { margin-left: 20px; text-decoration: none; color: var(--text-color); font-weight: 500; transition: color 0.3s; font-size: 0.95rem; }
         nav a:hover { color: var(--secondary-color); }
         section { padding: 4.5rem 5%; max-width: 1000px; margin: auto; }
         .section-title { text-align: center; font-size: 2.1rem; margin-bottom: 2.5rem; color: var(--primary-color); position: relative; }
@@ -39,25 +39,31 @@
         .date { color: var(--light-text); font-size: 0.9rem; margin-bottom: 12px; font-style: italic; }
         ul { padding-left: 20px; color: var(--light-text); margin-bottom: 0; }
         li { margin-bottom: 6px; }
-        .skills-container { background: #ffffff; padding: 25px; border-radius: 10px; text-align: center; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
-        .skill-tag { display: inline-block; background: #e6f3fa; color: var(--secondary-color); padding: 8px 16px; margin: 6px; border-radius: 20px; font-size: 0.9rem; font-weight: 500; transition: all 0.2s; }
-        .skill-tag:hover { background: var(--secondary-color); color: #ffffff; }
+        
+        /* 附件与证书标签容器样式 */
+        .attachments-container { background: #ffffff; padding: 30px; border-radius: 10px; box-shadow: 0 4px 15px rgba(0,0,0,0.03); }
+        .attachment-group { margin-bottom: 20px; }
+        .attachment-group h4 { color: var(--primary-color); margin-bottom: 10px; border-bottom: 1px dashed #eee; padding-bottom: 5px; }
+        .doc-tag { display: inline-block; background: #e6f3fa; color: var(--secondary-color); padding: 8px 16px; margin: 6px 8px 6px 0; border-radius: 20px; font-size: 0.9rem; font-weight: 500; transition: all 0.2s; text-decoration: none; box-shadow: 0 2px 4px rgba(0,0,0,0.05); }
+        .doc-tag:hover { background: var(--secondary-color); color: #ffffff; transform: translateY(-2px); box-shadow: 0 4px 8px rgba(0,0,0,0.15); }
+        
         footer { background: var(--primary-color); color: #ffffff; text-align: center; padding: 2.5rem 0; margin-top: 3rem; }
         footer a { color: #8ab4f8; text-decoration: none; margin: 0 8px; }
         footer a:hover { text-decoration: underline; }
-        @media(max-width: 768px) { .hero { flex-direction: column-reverse; text-align: center; padding-top: 2rem; } .hero-text { padding-right: 0; margin-top: 1.5rem; } header { flex-direction: column; padding: 1rem; } nav { margin-top: 12px; } }
+        @media(max-width: 768px) { .hero { flex-direction: column-reverse; text-align: center; padding-top: 2rem; } .hero-text { padding-right: 0; margin-top: 1.5rem; } header { flex-direction: column; padding: 1rem; } nav { margin-top: 12px; } nav a { margin: 0 8px; font-size: 0.85rem;} }
     </style>
 </head>
 <body>
 
     <header>
-        <a href="#" class="logo">陈泉 (Chen Quan)</a>
+        <a href="#" class="logo">陈泉</a>
         <nav>
             <a href="#about">个人陈述</a>
             <a href="#education">教育背景</a>
-            <a href="#skills">技能与证书</a>
+            <a href="#skills">技能平台</a>
             <a href="#competitions">竞赛经历</a>
             <a href="#honors">奖惩情况</a>
+            <a href="#attachments">证书附件</a>
         </nav>
     </header>
 
@@ -77,7 +83,6 @@
             <a href="mailto:chenquan@stu.kust.edu.cn" class="btn">联系我 (13163393951)</a>
         </div>
         <div class="hero-img">
-            <!-- 个人照片 -->
             <img src="profile.jpg" alt="陈泉的个人照片">
         </div>
     </section>
@@ -91,9 +96,7 @@
                 <h4>国土资源工程学院 - 测绘工程 (专业型硕士)</h4>
                 <div class="date">2024.09 - 至今</div>
                 <ul>
-                    <li><strong>学业表现：</strong> GPA 3.77 / 课程总平均分 85.95 
-                        <a href="transcript.pdf" target="_blank" style="color: #2980b9; text-decoration: none;">[📊 查看成绩单]</a>
-                    </li>
+                    <li><strong>学业表现：</strong> GPA 3.77 / 课程总平均分 85.95</li>
                 </ul>
             </div>
             <div class="card">
@@ -107,26 +110,15 @@
         </div>
     </section>
 
-    <!-- 技能与证书 -->
+    <!-- 技能与平台 -->
     <section id="skills">
-        <h2 class="section-title">技能与证书</h2>
-        <div class="skills-container">
-            <h4 style="margin-bottom: 15px; color: var(--primary-color);">外语水平</h4>
-            <a href="cet6.pdf" target="_blank" style="text-decoration: none;">
-                <span class="skill-tag" style="cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">全国大学英语六级 CET-6 (431分) 🔗</span>
-            </a>
-            <a href="cet4.pdf" target="_blank" style="text-decoration: none;">
-                <span class="skill-tag" style="cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">全国大学英语四级 CET-4 (443分) 🔗</span>
-            </a>
-            
-            <h4 style="margin: 20px 0 15px 0; color: var(--primary-color);">计算机能力</h4>
-            <a href="ncre3.pdf" target="_blank" style="text-decoration: none;">
-                <span class="skill-tag" style="cursor: pointer; box-shadow: 0 2px 4px rgba(0,0,0,0.1);">全国计算机等级考试三级 (NCRE-3) 🔗</span>
-            </a>
-            
-            <h4 style="margin: 20px 0 15px 0; color: var(--primary-color);">工具与平台</h4>
-            <span class="skill-tag">GEE (Google Earth Engine)</span>
-            <span class="skill-tag">ArcGIS 空间数据分析</span>
+        <h2 class="section-title">技能与平台</h2>
+        <div class="card" style="max-width: 800px; margin: auto;">
+            <ul>
+                <li><strong>外语水平：</strong> 全国大学英语六级 CET-6 (431分)、全国大学英语四级 CET-4 (443分)</li>
+                <li><strong>计算机能力：</strong> 全国计算机等级考试三级 (NCRE-3)</li>
+                <li><strong>工具与平台：</strong> 熟练掌握 GEE (Google Earth Engine)、ArcGIS 平台进行大规模空间数据分析</li>
+            </ul>
         </div>
     </section>
 
@@ -139,9 +131,7 @@
             <div class="date">2025.11 (中国测绘学会主办)</div>
             <ul>
                 <li><strong>参赛作品：</strong> D573《北极海冰面积时空变化特性与影响因素分析》</li>
-                <li><strong>所获奖项：</strong> <strong>优胜奖</strong> 
-                    <a href="gis_award.jpg" target="_blank" style="color: #2980b9; text-decoration: none; font-weight: bold;">[🏆 查看获奖证书]</a>
-                </li>
+                <li><strong>所获奖项：</strong> 优胜奖</li>
                 <li><strong>个人职责：</strong> 参与遥感数据的获取、预处理与分析，结合 GIS 空间分析工具，深度挖掘海冰变化特征，展现了良好的团队协作与技术攻关能力。</li>
             </ul>
         </div>
@@ -155,40 +145,57 @@
                 <h3>🏆 学业与骨干类表彰</h3>
                 <div class="date">校级荣誉</div>
                 <ul>
-                    <li><strong>2026.05：</strong> 荣获校级优秀研究生干部称号
-                        <a href="excellent_cadre_2026.jpg" target="_blank" style="color: #2980b9; text-decoration: none;">[📜 证书]</a>
-                    </li>
-                    <li><strong>2025.12：</strong> 荣获校级研究生学业奖学金 <strong>一等奖学金</strong>
-                        <a href="scholarship_2025.jpg" target="_blank" style="color: #2980b9; text-decoration: none;">[📜 证书]</a>
-                    </li>
-                    <li><strong>2025.05：</strong> 荣获校级研究生社会实践先进个人称号
-                        <a href="social_practice_2025.jpg" target="_blank" style="color: #2980b9; text-decoration: none;">[📜 证书]</a>
-                    </li>
-                    <li><strong>2024.11：</strong> 荣获校级研究生学业奖学金 <strong>一等奖学金</strong>
-                        <a href="scholarship_2024.jpg" target="_blank" style="color: #2980b9; text-decoration: none;">[📜 证书]</a>
-                    </li>
+                    <li><strong>2026.05：</strong> 荣获校级优秀研究生干部称号</li>
+                    <li><strong>2025.12：</strong> 荣获校级研究生学业奖学金 <strong>一等奖学金</strong></li>
+                    <li><strong>2025.05：</strong> 荣获校级研究生社会实践先进个人称号</li>
+                    <li><strong>2024.11：</strong> 荣获校级研究生学业奖学金 <strong>一等奖学金</strong></li>
                 </ul>
             </div>
             <div class="card">
                 <h3>🎨 综合实践竞赛</h3>
                 <div class="date">国资院级荣誉</div>
                 <ul>
-                    <li><strong>2025.05 / 2026.04 / 2025.12：</strong> 荣获国资院第五届、第六届樱花杯摄影比赛 <strong>三等奖</strong>
-                        <a href="photography_award.jpg" target="_blank" style="color: #2980b9; text-decoration: none;">[🖼️ 证书1]</a>
-                        <a href="photography_award2.jpg" target="_blank" style="color: #2980b9; text-decoration: none;">[🖼️ 证书2]</a>
-                    </li>
-                    <li><strong>2024.12 / 2025.12：</strong> 荣获国资院第四届三行情书大赛最佳人气奖、第五届 <strong>三等奖</strong>
-                        <a href="award_poem2.jpg" target="_blank" style="color: #2980b9; text-decoration: none;">[🖼️ 证书1]</a>
-                        <a href="award_poem.jpg" target="_blank" style="color: #2980b9; text-decoration: none;">[🖼️ 证书2]</a>
-                    </li>
-                    <li><strong>2025.06：</strong> 荣获国资院袋动国土设计大赛 <strong>三等奖</strong>
-                        <a href="award_design2.jpg" target="_blank" style="color: #2980b9; text-decoration: none;">[🖼️ 证书]</a>
-                    </li>
-                    <li><strong>2025.05：</strong> 荣获国资院第一届拼贴画比赛 <strong>三等奖</strong>
-                        <a href="award_design.jpg" target="_blank" style="color: #2980b9; text-decoration: none;">[🖼️ 证书]</a>
-                    </li>
+                    <li><strong>2025.05 / 2026.04 / 2025.12：</strong> 荣获国资院第五届、第六届樱花杯摄影比赛 <strong>三等奖</strong></li>
+                    <li><strong>2024.12 / 2025.12：</strong> 荣获国资院第四届三行情书大赛最佳人气奖、第五届 <strong>三等奖</strong></li>
+                    <li><strong>2025.06：</strong> 荣获国资院袋动国土设计大赛 <strong>三等奖</strong></li>
+                    <li><strong>2025.05：</strong> 荣获国资院第一届拼贴画比赛 <strong>三等奖</strong></li>
                 </ul>
             </div>
+        </div>
+    </section>
+
+    <!-- 附件与证书集中展示区 -->
+    <section id="attachments">
+        <h2 class="section-title">证书与附件展示</h2>
+        <div class="attachments-container">
+            
+            <div class="attachment-group">
+                <h4>📚 学业与技能凭证 (PDF格式)</h4>
+                <a href="transcript.pdf" target="_blank" class="doc-tag">📊 硕士成绩单</a>
+                <a href="cet6.pdf" target="_blank" class="doc-tag">📝 英语六级 (CET-6)</a>
+                <a href="cet4.pdf" target="_blank" class="doc-tag">📝 英语四级 (CET-4)</a>
+                <a href="ncre3.pdf" target="_blank" class="doc-tag">💻 计算机三级 (NCRE)</a>
+            </div>
+
+            <div class="attachment-group">
+                <h4>🏆 骨干与奖学金荣誉 (JPG格式)</h4>
+                <a href="scholarship_2025.jpg" target="_blank" class="doc-tag">🥇 2025一等学业奖学金</a>
+                <a href="scholarship_2024.jpg" target="_blank" class="doc-tag">🥇 2024一等学业奖学金</a>
+                <a href="excellent_cadre_2026.jpg" target="_blank" class="doc-tag">🎖️ 优秀研究生干部</a>
+                <a href="social_practice_2025.jpg" target="_blank" class="doc-tag">🎖️ 社会实践先进个人</a>
+            </div>
+
+            <div class="attachment-group">
+                <h4>🎨 竞赛与文体活动证书 (JPG格式)</h4>
+                <a href="gis_award.jpg" target="_blank" class="doc-tag">🌍 易智瑞杯GIS竞赛优胜奖</a>
+                <a href="photography_award.jpg" target="_blank" class="doc-tag">📷 樱花杯摄影(五届)三等奖</a>
+                <a href="photography_award2.jpg" target="_blank" class="doc-tag">📷 樱花杯摄影(六届)三等奖</a>
+                <a href="award_poem2.jpg" target="_blank" class="doc-tag">💌 三行情书最佳人气奖</a>
+                <a href="award_poem.jpg" target="_blank" class="doc-tag">💌 三行情书三等奖</a>
+                <a href="award_design2.jpg" target="_blank" class="doc-tag">🎨 袋动国土设计三等奖</a>
+                <a href="award_design.jpg" target="_blank" class="doc-tag">🖼️ 第一届拼贴画三等奖</a>
+            </div>
+
         </div>
     </section>
 
